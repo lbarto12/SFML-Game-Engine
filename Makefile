@@ -7,4 +7,4 @@ link:
 	g++ main.o -o main -Lsrc/lib -lsfml-graphics -lsfml-window -lsfml-system
 
 # run with "MinGW32-make"
-# run app with ".\code\main"
+# run app with ".\main"

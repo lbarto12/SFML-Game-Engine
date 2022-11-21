@@ -1,21 +1,18 @@
-#include <SFML/Graphics.hpp>
+#include "GLIB/managers/App.h"
+#include <iostream>
 
-int main() {
-    sf::RenderWindow window(sf::VideoMode(800, 600), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
-
-    while (window.isOpen()) {
-        sf::Event event;
-        while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
-
-        window.clear();
-        window.draw(shape);
-        window.display();
+class Game : public App {
+public:
+    void Start() {
+        std::cout << "started" << std::endl;
     }
 
-    return 0;
+    void Update() {
+        std::cout << "running" << std::endl;
+    }
+};
+
+int main() {
+    (new Game())
+        ->start();
 }
